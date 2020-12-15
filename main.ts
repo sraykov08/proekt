@@ -12,6 +12,7 @@ input.onGesture(Gesture.Shake, function () {
 let song: number[][] = []
 let value: number[] = []
 music.setTempo(120)
+basic.showIcon(IconNames.Angry)
 basic.forever(function () {
     for (let value2 of song) {
         music.playTone(value2[0], value2[1])
