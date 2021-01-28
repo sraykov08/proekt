@@ -5,14 +5,15 @@ input.onButtonPressed(Button.A, function () {
 input.onButtonPressed(Button.B, function () {
     music.startMelody(music.builtInMelody(Melodies.Prelude), MelodyOptions.OnceInBackground)
 })
-input.onGesture(Gesture.Shake, function () {
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     music.playMelody("C5 B A G F E D C ", 120)
     music.playMelody("C D E F G A B C5 ", 120)
 })
 let song: number[][] = []
 let value: number[] = []
 music.setTempo(120)
-basic.showIcon(IconNames.Angry)
+basic.showIcon(IconNames.EigthNote)
+music.setBuiltInSpeakerEnabled(true)
 basic.forever(function () {
     for (let value2 of song) {
         music.playTone(value2[0], value2[1])
